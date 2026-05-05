@@ -1,13 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Developer CV
 % LaTeX Class
-% Version 1.1 (February 24, 2025)
+% Version 2.0 (May 5, 2026)
 %
 % This class originates from:
 % https://www.LaTeXTemplates.com
 %
 % Authors:
-% Jan Vorisek (jan@vorisek.me)
+% Felipe Torres González (torresfelipex1@gmail.com)
+% Based on a template by Jan Vorisek (jan@vorisek.me)
 % Based on a template by Jan Küster (info@jankuester.com)
 % Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
 %
@@ -21,7 +22,7 @@
 %----------------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{developercv}[2025/02/24 Developer CV class v1.1]
+\ProvidesClass{developercv}[2026/05/05 Developer CV class v2.0]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}} % Pass through any options to the base class
 \ProcessOptions\relax % Process given options
@@ -190,7 +191,7 @@
 		#1 % Leftmost entry date(s) text
 	}%
 	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
-		\textbf{#2}% Entry heading text
+		{\large \textbf{#2}}% Entry heading text
 		\hfill% Horizontal whitespace
 		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
 		#4 % Entry description text
@@ -198,3 +199,6 @@
 
 % Command to output a separator slash between lists, e.g. '  /  '
 \newcommand{\slashsep}{\hspace{3mm}/\hspace{3mm}}
+
+% Command to make a simple list
+\newcommand{\simpleitem}{\hspace*{0.5mm}$\triangleright$ }
