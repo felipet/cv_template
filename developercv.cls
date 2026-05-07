@@ -140,15 +140,12 @@
 
 % Command to output a number of automatically-sized bubbles from a string in the format of '<size>/<label>', e.g. \bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
 \newcommand{\bubbles}[1]{
-	% Reset counters
-	\setcounter{a}{0}
-	\setcounter{c}{150}
-	\tikzset{every node/.append style={text depth=0.4ex}} % Adds a text depth so extenders don't cause mis-alignment of labels
-	
-	\begin{tikzpicture}[scale=3]
-		\foreach \p/\t in {#1} {
-			\addtocounter{a}{1}
-			\bubble{\thea/2}{\theb}{\p/25}{\t}{1\p0}
+	\begin{tikzpicture}[every node/.append style={text depth=0.4ex}]
+		\foreach \p/\t [count=\i] in {#1} {
+			% \i*2.5 sets the separation between bubbles, increase it when needed.
+			\node[circle, fill=black, minimum size=\p*0.30cm] (b\i) at (\i*2.5,0) {};
+			% Use \footnotesize rather than small if the text is too long and collides with the next bubble.
+			\node[above=0.2cm, align=center, font=\small] at (b\i.north) {\t};
 		}
 	\end{tikzpicture}
 }
