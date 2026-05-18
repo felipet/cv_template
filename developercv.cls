@@ -199,3 +199,29 @@
 
 % Command to make a simple list
 \newcommand{\simpleitem}{\hspace*{0.5mm}$\triangleright$ }
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER COMMANDS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\recipient}[1]{\def\@recipient{#1}}
+\newcommand{\letterdate}[1]{\def\@letterdate{#1}}
+\newcommand{\subject}[1]{\def\@subject{#1}}
+
+\newcommand{\makeletterhead}{
+	\vspace{1.5cm}
+	\begin{minipage}[t]{0.5\textwidth}
+		\textbf{To:}\\
+		\@recipient
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.4\textwidth}
+		\raggedleft
+		\@letterdate
+	\end{minipage}
+	\vspace{1cm}
+	\ifdefined\@subject
+		{\large \textbf{Subject: \@subject}}
+		\vspace{1cm}
+	\fi
+}
