@@ -221,7 +221,7 @@
 	\end{minipage}
 	\vspace{1cm}
 	\ifdefined\@subject
-		{\large \textbf{Subject: \@subject}}
+		{\large \linebreak \textbf{Subject: \@subject}}
 		\vspace{1cm}
 	\fi
 }
